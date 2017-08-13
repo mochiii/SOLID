@@ -1,0 +1,1 @@
+﻿We need to add additional issue type support to IssueStatisticsProcessor but our very first implementation violates OCP.

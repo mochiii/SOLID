@@ -1,0 +1,2 @@
+﻿We have requirement to add TryParse method to IssueReportParser, extract interface and implement that interface by IssueReportParserImportantIssueFilter
+so it can be used as decorator. IssueReportParserImportantIssueFilter does not require TryParse method but is pushed to implement it. Doing so we violate ISP.

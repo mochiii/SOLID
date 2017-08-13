@@ -1,0 +1,2 @@
+﻿We need to add additional behavior to IssueStatisticsProcessor (ImportantIssueStatisticsProcessor) and IssueReportParser (ImportantIssueIssueReportParser).
+Following OCP we inherit from IssueStatisticsProcessor but our very first implementation violates LSP.

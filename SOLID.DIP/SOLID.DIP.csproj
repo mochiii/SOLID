@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91D6E052-21E1-4110-926B-D9EAEA51B268}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SOLID.DIP</RootNamespace>
+    <AssemblyName>SOLID.DIP</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="After\DateTimeFacade.cs" />
+    <Compile Include="After\Exceptions\ElementIsEmptyException.cs" />
+    <Compile Include="After\Exceptions\ElementNotFoundException.cs" />
+    <Compile Include="After\Exceptions\IssueTypeNotImportantException.cs" />
+    <Compile Include="After\Exceptions\IssueTypeNotSupportedException.cs" />
+    <Compile Include="After\Factories\Interfaces\IXmlDocumentFactory.cs" />
+    <Compile Include="After\Factories\Interfaces\IStreamWriterFactory.cs" />
+    <Compile Include="After\Factories\StreamWriterFactory.cs" />
+    <Compile Include="After\Factories\XmlDocumentFactory.cs" />
+    <Compile Include="After\IDateTimeFacade.cs" />
+    <Compile Include="After\IIssueStatisticsWriter.cs" />
+    <Compile Include="After\IssueReportParserImportantIssueFilter.cs" />
+    <Compile Include="After\IssueStatisticsWriter.cs" />
+    <Compile Include="After\Models\Error.cs" />
+    <Compile Include="After\Models\IIssue.cs" />
+    <Compile Include="After\Models\IssueReport.cs" />
+    <Compile Include="After\Models\IssueTypes.cs" />
+    <Compile Include="After\Models\Warning.cs" />
+    <Compile Include="After\Parsers\Interfaces\IIssueReportDateTimeParser.cs" />
+    <Compile Include="After\Parsers\Interfaces\IIssueReportIssueParser.cs" />
+    <Compile Include="After\Parsers\Interfaces\IIssueReportParser.cs" />
+    <Compile Include="After\Parsers\Interfaces\IPermissiveIssueReportParser.cs" />
+    <Compile Include="After\Parsers\IssueReportDateTimeParser.cs" />
+    <Compile Include="After\Parsers\IssueReportIssueParser.cs" />
+    <Compile Include="After\Parsers\IssueReportParser.cs" />
+    <Compile Include="After\Processors\ImportantIssueStatisticsProcessor.cs" />
+    <Compile Include="After\Processors\IssueStatisticsProcessor.cs" />
+    <Compile Include="After\Providers\ErrorIssueInfoAndInstanceProvider.cs" />
+    <Compile Include="After\Providers\IIssueInfoAndInstanceProvider.cs" />
+    <Compile Include="After\Providers\WarningIssueInfoAndInstanceProvider.cs" />
+    <Compile Include="After\Retrievers\ConfigurationRietriever.cs" />
+    <Compile Include="After\Retrievers\Interfaces\IConfigurationRietriever.cs" />
+    <Compile Include="After\Retrievers\Interfaces\IIssueInfoAndInstanceProviderRetriever.cs" />
+    <Compile Include="After\Retrievers\IssueInfoAndInstanceProviderRetriever.cs" />
+    <Compile Include="Before\Exceptions\ElementIsEmptyException.cs" />
+    <Compile Include="Before\Exceptions\ElementNotFoundException.cs" />
+    <Compile Include="Before\Exceptions\IssueTypeNotImportantException.cs" />
+    <Compile Include="Before\Exceptions\IssueTypeNotSupportedException.cs" />
+    <Compile Include="Before\IssueReportParserImportantIssueFilter.cs" />
+    <Compile Include="Before\IssueStatisticsWriter.cs" />
+    <Compile Include="Before\Models\Error.cs" />
+    <Compile Include="Before\Models\IIssue.cs" />
+    <Compile Include="Before\Models\IssueReport.cs" />
+    <Compile Include="Before\Models\IssueTypes.cs" />
+    <Compile Include="Before\Models\Warning.cs" />
+    <Compile Include="Before\Parsers\IIssueReportParser.cs" />
+    <Compile Include="Before\Parsers\IPermissiveIssueReportParser.cs" />
+    <Compile Include="Before\Parsers\IssueReportDateTimeParser.cs" />
+    <Compile Include="Before\Parsers\IssueReportIssueParser.cs" />
+    <Compile Include="Before\Parsers\IssueReportParser.cs" />
+    <Compile Include="Before\Processors\ImportantIssueStatisticsProcessor.cs" />
+    <Compile Include="Before\Processors\IssueStatisticsProcessor.cs" />
+    <Compile Include="Before\Providers\ErrorIssueInfoAndInstanceProvider.cs" />
+    <Compile Include="Before\Providers\IIssueInfoAndInstanceProvider.cs" />
+    <Compile Include="Before\Providers\WarningIssueInfoAndInstanceProvider.cs" />
+    <Compile Include="Before\Retrievers\ConfigurationRietriever.cs" />
+    <Compile Include="Before\Retrievers\IssueInfoAndInstanceProviderRetriever.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
